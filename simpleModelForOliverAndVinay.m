@@ -1,7 +1,7 @@
 
 addpath ../GMLM_RCT/
-addpath ../GMLM
-addpath ../GMLM/example/
+addpath ../GMLM_dmc/
+addpath ../GMLM_dmc/example/
 clear modelSetup;
 
 modelSetup.location = "FEF";
@@ -85,6 +85,7 @@ if(~gmlm.isOnGPU())
 end
 
 %%
+params = gmlm.getRandomParamStruct();
 HMC_settings = gmlm.setupHMCparams(25e3, 50e3);
 HMC_settings.samplesFile = "TempData/SAMPLES_quickRun.mat";
 HMC_settings.trialLLfile = "TempData/quickRun.mat";
