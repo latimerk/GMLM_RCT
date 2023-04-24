@@ -1,0 +1,1 @@
+system("cd ~/gitCode/GMLM; git pull; cd ~/gitCode/GMLM_RCT/; git pull");
