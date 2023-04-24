@@ -1,3 +1,9 @@
+addpath ../GMLM_RCT/
+addpath ../GMLM
+addpath ../GMLM/example/
+bases = RCT.modelBuilder.setupBasis();
+kernelTimescales =  RCT.modelBuilder.getDefaultKernelTimescales();
+
 basis = "stimulus";
 
 B = bases.(basis).B;

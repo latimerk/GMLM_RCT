@@ -128,8 +128,10 @@ for bb = 1:numel(basisNames)
     prior_normalization.(basis).U_sigma     = eye(size(S));
     prior_normalization.(basis).U_transform = chol(S);
     
+    std_per_basis  = 1;
     %cS = prior_normalization.(basis).U_transform;
-    std_per_basis  = 1;%sqrt(trace(cov(B * cS))) * sqrt(2/pi); % not sure why I was computing this before
+    %std_per_basis  = sqrt(trace(cov(B * cS))) * sqrt(2/pi); % not sure why I was computing this before
+%     std_per_basis  = 1./sqrt(trace(cov(B * cS))) ;
     
     prior_normalization.(basis).mu = 0;
     prior_normalization.(basis).sig = std_per_basis;

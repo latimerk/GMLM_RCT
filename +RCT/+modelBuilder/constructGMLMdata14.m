@@ -727,7 +727,7 @@ for jj = 1:numel(GMLMstructure.Groups)
         prior_setup(jj).T(1).U_sigma_0         = prior_normalization.(basis).U_sigma_0;
         prior_setup(jj).T(1).U_sigma           = prior_normalization.(basis).U_sigma ;
         prior_setup(jj).T(1).U_transform       = prior_normalization.(basis).U_transform;
-        prior_setup(jj).T(1).lambda_log_scale  = 0;%-log(prior_normalization.(basis).sig);
+        prior_setup(jj).T(1).lambda_log_scale  = log(prior_normalization.(basis).sig);
         prior_setup(jj).T(1).U_sigma_inv       = inv(prior_setup(jj).T(1).U_sigma_0);
         prior_setup(jj).T(1).U_sigma_chol_inv  = chol(prior_setup(jj).T(1).U_sigma_inv)';
     else
