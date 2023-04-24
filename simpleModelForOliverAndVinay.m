@@ -85,8 +85,11 @@ if(~gmlm.isOnGPU())
 end
 
 %%
+numWarmup = 10e3;
+numSamples = 20e3;
+
 params = gmlm.getRandomParamStruct();
-HMC_settings = gmlm.setupHMCparams(25e3, 50e3);
+HMC_settings = gmlm.setupHMCparams(numWarmup, numSamples);
 HMC_settings.samplesFile = "TempData/SAMPLES_quickRun.mat";
 HMC_settings.trialLLfile = "TempData/quickRun.mat";
 HMC_settings.M_init = RCT.modelBuilder.getMInit(params, modelSetup, gmlm.dim_M);
